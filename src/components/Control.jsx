@@ -7,7 +7,9 @@ const Control = () => {
     const [count, setCount] = useRecoilState(counterState)
     const [theme, setTheme] = useRecoilState(themeState)
     const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light")
+    const newTheme = theme === "light" ? "dark" : "light"
+    setTheme(newTheme)
+    localStorage.setItem("theme", newTheme)
   }
   return (
     <div>
